@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ 
 .flag {
-    width: 150px;
+  width: 150px;
+}
+body {
+  padding-top:70px;
+  background: "<%= @color %>";
+}
+.image-fix {
+  max-width:400px;
 }
