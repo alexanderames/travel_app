@@ -2,6 +2,24 @@
 <p>Travel bargains soon to follow..</p>
 
 <h2>My homestate is <%= @homestate %>!</h2>
+
+<table class="table">
+  <tr>
+    <% @us.each do |key,value| %>
+	  <th><%= key.titleize %></th>
+    <% end %>
+  </tr>
+  <tr>
+    <% @us.each do |key,value| %>      
+      <% if value.kind_of?(Array) %>
+          <td><%= value.join(", ") %></td>
+      <% else %>
+         <td><%= value %></td>
+      <% end %> 
+    <% end %>
+  </tr>
+</table>
+
 <ul>
     <% @countries.each do |country| %>
     <li><%= country %><br>
@@ -12,3 +30,4 @@
 <% @images.each do |image| %>
 <%= image_tag image, class: "img-responsive image-fix" %>
 <% end %>
+
