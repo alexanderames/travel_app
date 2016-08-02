@@ -9,4 +9,9 @@ class WelcomeController < ApplicationController
     @color = params[:color]
     @shoe_size = params[:size].to_i
   end
+  
+  def contact
+  
+  end
+  
 end
