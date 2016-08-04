@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<center>
+<h1>My Destination Wish-List</h1>
+<ul class="nav nav-pills nav-justified" role="tablist">
+  <li><%= link_to "All", destinations_path %></li>
+  <% @my_countries.each do |c| %>
+      <li><%= link_to c.country, destinations_path(country: c.country) %></li>
+    <% end %>
+  
+</ul>
+</center>
+  <div class="row">
+    <% @destinations.each do |destination| %>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <%= link_to destination do %>
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <%= destination.city %>, <%= destination.country %>
+            </h3>
+          </div>
+          <% end %>
+        <div class="panel-body">
+          <% if destination.photo_file_name != nil %>
+            <%= image_tag destination.photo.url(:medium) %>
+          <% end %>
+          <p>
+          <%= link_to destination do %>
+            <%= destination.description[0..15] %>
+          <% end %>
+          </p>
+            
+              <%= link_to 'Edit', edit_destination_path(destination) %>
+              <%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                 
+  </div>
+</div>
+      </div>
+    <% end %>
+  </div>
+</table>
+
+<br>
+</div></div>
+<%= link_to 'New Destination', new_destination_path %>
+
+
+

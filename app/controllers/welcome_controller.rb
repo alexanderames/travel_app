@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
           "favorite state" => "New York",
           "flag colors" => ['blue', 'yellow', 'red']}
     @countries = ['Spain', 'Italy', 'New_Zealand']
-    @images = ['madrid.jpg', 'newZ.jpg', 'venice.jpg']
+    @images = ['madrid.jpg', 'newZ.jpg', 'venice.jpg'].shuffle
   end
 
   def about

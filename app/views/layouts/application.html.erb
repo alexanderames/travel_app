@@ -13,6 +13,12 @@
   <%= csrf_meta_tags %>
 </head>
   <body>
+    <% if notice != nil %>
+      <p id = "notice" class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= notice %>
+  </p>
+<% end %>
     
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -33,7 +39,13 @@
             <li><%= link_to "About", about_path %></li>
             <li><%= link_to "Contact", contact_path %></li>
           </ul>
-          
+          <ul class="nav navbar-nav">
+            <li>
+              <%= link_to 'About', about_path %>
+            </li>
+            <li>
+               <%= link_to 'Destinations', destinations_path %>
+            </li>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Link</a></li>
           </ul>
